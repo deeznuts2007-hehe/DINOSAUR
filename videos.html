@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Experience the power of dinosaurs through an amazing collection of videos. Watch documentaries, animations, and battles!">
+    <meta name="keywords" content="dinosaurs, dinosaur videos, T-Rex, Jurassic, prehistoric creatures">
+    <meta name="author" content="Dinosaur Enthusiast">
+    <title>Dinosaurs: Feel Their Dominance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: black;
+            color: white;
+            margin: 0;
+        }
+        header {
+            background: #222;
+            padding: 20px;
+        }
+        nav {
+            background: black; /* Change to black */
+            padding: 15px;
+            display: flex;
+            justify-content: flex-start; /* Align to the left */
+            gap: 30px;
+            border-bottom: 3px solid #ffcc00;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px 20px;
+            transition: background 0.3s, transform 0.2s;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+        h1 {
+            font-size: 3em;
+            margin: 20px 0;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px 30px;
+        }
+        .content {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px auto;
+        }
+        iframe {
+            border-radius: 10px;
+            width: 640px;
+            height: 360px;
+            transition: transform 0.3s ease-in-out;
+        }
+        iframe:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background: #222;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 1.2em;
+        }
+        @media (max-width: 768px) {
+            .video-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            iframe {
+                width: 100%;
+                height: auto;
+            }
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+            }
+            nav a {
+                display: block;
+                text-align: center;
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dinosaurs: Feel Their Dominance</h1>
+    </header>
+
+    <nav>
+        <a href="home.html" aria-label="Home page">Home</a>
+        <a href="dinosaur.html" aria-label="Dinosaur page">Dinosaur</a>
+        <a href="facts.html" aria-label="Facts page">Facts</a>
+        <a href="quiz.html" aria-label="Quiz page">Quiz</a>
+    </nav>
+
+    <div class="content">
+        <h2>Dinosaur Videos</h2>
+        <p>Watch these videos and experience the power of dinosaurs!</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/RBgFsVN3uR8" title="Dinosaur Documentary" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/lQwQpG4L1nw" title="Dinosaurs Documentary" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/NL7B1gtGnbc" title="T-Rex Roars" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/RnI3XBPh6kA" title="Jurassic World Dinosaur Battle" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/ah6nM85sbV0" title="Realistic Dinosaur Animations" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/c5T5GMxYnZM" title="Dinosaur Fight Scene" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/sHvr-izTZMk" title="Dinosaurs Walking With Giants" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Dinosaurs Enthusiasts. All rights reserved.</p>
+    </footer>
+</body>
+</html>

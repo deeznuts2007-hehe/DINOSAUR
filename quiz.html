@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaur Quiz</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #333333, #000000);
+            color: white;
+            margin: 0;
+            transition: background 0.5s ease;
+        }
+        header, footer {
+            background: #222222;
+            padding: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            padding: 20px;
+        }
+        .quiz-container {
+            width: 90%;
+            max-width: 600px;
+            padding: 25px;
+            border-radius: 15px;
+            background: #444;
+            box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        h2 {
+            font-size: 28px;
+            color: #ffcc00;
+            margin-bottom: 15px;
+        }
+        .question {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        .options {
+            list-style: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+            padding: 12px;
+            font-size: 18px;
+            background: #555;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .options li:hover {
+            background: #777;
+            transform: scale(1.05);
+        }
+        .selected {
+            background: #ffcc00 !important;
+            color: black;
+            font-weight: bold;
+        }
+        .correct {
+            background: #00cc00 !important;
+        }
+        .wrong {
+            background: #cc0000 !important;
+        }
+        button {
+            margin-top: 15px;
+            padding: 12px 30px;
+            border: none;
+            background: #ffcc00;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+        button:hover {
+            background: #e6b800;
+            transform: scale(1.05);
+        }
+        #timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: red;
+            margin-bottom: 15px;
+        }
+        #result {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        .hidden {
+            display: none;
+        }
+        #score {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>Dinosaur Quiz</header>
+    <main>
+        <div class="quiz-container">
+            <h2>Test Your Knowledge!</h2>
+            <p id="timer">Time left: 15s</p>
+            <p class="question" id="question"></p>
+            <ul class="options" id="options"></ul>
+            <p id="score">Score: 0</p>
+            <button onclick="checkAnswer()" id="submitBtn">Submit</button>
+            <button onclick="nextQuestion()" class="hidden" id="nextBtn">Next</button>
+            <button onclick="restartQuiz()" class="hidden" id="restartBtn">Restart</button>
+            <p id="result" class="hidden"></p>
+        </div>
+    </main>
+    <footer>© 2025 Dinosaur Quiz | All Rights Reserved</footer>
+    
+    <script>
+        let currentQuestionIndex = 0;
+        let timer;
+        let timeLeft;
+        let selectedAnswer = null;
+        let score = 0;
+
+        function displayQuestion() {
+            let q = questions[currentQuestionIndex];
+            document.getElementById("question").textContent = q.question;
+            let optionsHTML = "";
+            q.options.forEach(option => {
+                optionsHTML += `<li onclick="selectAnswer(this, '${option}')">${option}</li>`;
+            });
+            document.getElementById("options").innerHTML = optionsHTML;
+            selectedAnswer = null;
+            document.getElementById("result").classList.add("hidden");
+            document.getElementById("nextBtn").classList.add("hidden");
+            document.getElementById("submitBtn").classList.remove("hidden");
+            startTimer();
+        }
+        
+        displayQuestion();
+    </script>
+</body>
+</html>
